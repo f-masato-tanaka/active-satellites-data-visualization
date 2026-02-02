@@ -1,6 +1,6 @@
 # 🛰️ Active Satelllites Data Visualization
 
-> **🎓 Learning Project:** This repository is a technical exercise developed to practice data science, geospatial visualization, and web development. 
+> **🎓 Learning Project:** This repository is a technical exercise to practice data science, geospatial visualization, and web development, applying the concepts covered during Alura's Python Immersion (Imersão Alura de Python).
 
 An interactive dashboard created to explore the global active satellite infrastructure from 2016. This exercise focuses on applying Python libraries to visualize orbital data.
 
