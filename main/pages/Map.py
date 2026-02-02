@@ -11,7 +11,7 @@ st.title("Satellites Global Analytics")
 
 @st.cache_data
 def load_data():
-    url = 'https://raw.githubusercontent.com/f-masato-tanaka/active-satellites-data-visualization/refs/heads/main/database.csv'
+    url = 'https://raw.githubusercontent.com/f-masato-tanaka/active-satellites-data-visualization/refs/heads/main/main/database.csv'
     df = pd.read_csv(url)
     
     rename_columns = {

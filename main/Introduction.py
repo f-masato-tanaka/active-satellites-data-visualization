@@ -38,7 +38,15 @@ st.markdown("""
     ### Future Improvements
     - **Most recent data:** Update the dataset to include the latest satellite launches and decommissions.
     - **More filters:** Add search filters.
-    - **Enhanced Visualizations:** Integrate additional chart types for deeper insights.
+    - **Update telecom-churn-ml to streamlit.**
+    """)
+
+st.markdown("---")
+
+st.markdown("""
+    ### Credits
+    - **Dataset Source:** [Kaggle Dataset](https://www.kaggle.com/datasets/ucsusa/active-satellites)
+    - **Developed by:** Fernando Masato Tanaka (https://github.com/f-masato-tanaka)
     """)
 
 
