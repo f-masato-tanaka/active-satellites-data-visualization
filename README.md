@@ -28,6 +28,17 @@ The primary goal of this project was to handle a real-world dataset and transfor
 * **Dataset:** [Kaggle - Active Satellites](https://www.kaggle.com/datasets/ucsusa/active-satellites).
 * **Note:** The dataset info is from 2016.
 
+## 📸 Interface Preview
+
+<p align="center">
+  <img src="imgs\Introduction.png" width="50%" />
+  <img src="imgs\Map.png" width="50%" /> 
+</p>
+
+![Demo](run.gif)
+
+
+
 ## 📥 How to use (Local Setup)
 * **Clone the repository:**
 
