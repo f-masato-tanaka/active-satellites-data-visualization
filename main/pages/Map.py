@@ -9,11 +9,13 @@ st.set_page_config(page_title="Active Satellites Data Visualization (2016)", pag
 # Title
 st.title("Satellites Global Analytics")
 
+# Dataset load
 @st.cache_data
 def load_data():
     url = 'https://raw.githubusercontent.com/f-masato-tanaka/active-satellites-data-visualization/refs/heads/main/main/database.csv'
     df = pd.read_csv(url)
     
+    # Renaming columns for better readability
     rename_columns = {
         'Official Name of Satellite': 'sat_name',
         'Country/Organization of UN Registry': 'country',
@@ -26,6 +28,7 @@ def load_data():
     }
     df = df[list(rename_columns.keys())].rename(columns=rename_columns)
     
+    # Standardizing some country names or unknown countries
     acronym_map = {
         'USA': 'United States',
         'UK': 'United Kingdom',
@@ -59,7 +62,7 @@ launch_site_coords = {
 
 df = load_data()
 
-# --- SIDEBAR ---
+# ---SIDEBAR---
 st.sidebar.header("Control Panel")
 
 viz_type = st.sidebar.radio("Visualization type:", ("Density Map (Country)"))
@@ -76,7 +79,7 @@ selected_orbit = st.sidebar.multiselect("Select Orbit Type", all_orbits)
 all_launch_sites = sorted(df['launch_site'].unique().astype(str))
 selected_launch_site = st.sidebar.multiselect("Select Launch Site", all_launch_sites)
 
-# Logic for independent filters (OR logic as requested)
+# Logic for independent filters 
 if not selected_purpose and not selected_orbit and not selected_launch_site:
     df_filtered = df.copy()
 else:
@@ -86,8 +89,7 @@ else:
         (df['launch_site'].isin(selected_launch_site))
     ]
 
-# --- RENDER MAPS ---
-
+# ---MAPS---
 if viz_type == "Density Map (Country)":
     st.subheader("Dominance by Country")
     df_counts = df_filtered['country'].value_counts().reset_index()
